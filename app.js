@@ -17,7 +17,7 @@ function init(SeletorFrase, seletorAutor, seletorBtn) {
                 // Aguarda o retorno do Fetch e transforma em JSON
                 const dadosJSON = await (await dadosResponse).json();
                 // Puxando as frases de forma aleatoria
-                const aleatorio = dadosJSON[Math.floor(Math.random() * 2)];
+                const aleatorio = dadosJSON[Math.floor(Math.random() * 200)];
 
                 // Insere os dados no DOM
                 frase.innerText = aleatorio.quote;
