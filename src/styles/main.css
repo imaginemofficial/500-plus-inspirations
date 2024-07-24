@@ -18,11 +18,15 @@ body {
   background-color: light-dark(#ffffff, #191919);
   color: light-dark(#37352f, #d9d9d9);
   font-family: "Questrial", sans-serif;
-  position: relative;
 }
 
 body.dark {
   background-color: #191919;
+  color: #d9d9d9;
+}
+
+body.dark #quote::before,
+body.dark #author::before {
   color: #d9d9d9;
 }
 
@@ -31,18 +35,34 @@ body.light {
   color: #37352f;
 }
 
+body.light #quote::before,
+body.light #author::before {
+  color: #37352f;
+}
+
 .container {
+  align-items: center;
+  display: flex;
+  height: 310px;
   left: 50%;
   max-width: 960px;
+  opacity: 0;
   padding: 32px;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% + 20px));
+  transition: all 2s linear 0.2s;
   width: 100%;
+}
+
+.container.show {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
 .container blockquote {
   margin: 0;
+  position: relative;
 }
 
 #quote {
@@ -58,10 +78,10 @@ body.light {
   content: "“";
   font-size: 3rem;
   font-weight: normal;
-  left: 12px;
+  left: -20px;
   opacity: 0.7;
   position: absolute;
-  top: 24px;
+  top: -8px;
 }
 
 #author {
