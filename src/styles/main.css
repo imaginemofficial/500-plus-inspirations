@@ -21,7 +21,17 @@ body {
   position: relative;
 }
 
-.estrutura {
+body.dark {
+  background-color: #191919;
+  color: #d9d9d9;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #37352f;
+}
+
+.container {
   left: 50%;
   max-width: 960px;
   padding: 32px;
@@ -31,11 +41,11 @@ body {
   width: 100%;
 }
 
-.estrutura blockquote {
+.container blockquote {
   margin: 0;
 }
 
-.estrutura blockquote .frase {
+#quote {
   font-size: 1.2rem;
   letter-spacing: 2px;
   line-height: 1.2rem;
@@ -43,7 +53,7 @@ body {
   margin-top: 0px;
 }
 
-.estrutura blockquote .frase::before {
+#quote::before {
   color: light-dark(#37352f, #d9d9d9);
   content: "“";
   font-size: 3rem;
@@ -54,7 +64,7 @@ body {
   top: 24px;
 }
 
-.estrutura blockquote cite {
+#author {
   align-items: center;
   display: flex;
   font-family: "Inter", sans-serif;
@@ -63,7 +73,7 @@ body {
   font-weight: 500;
 }
 
-.estrutura blockquote cite::before {
+#author::before {
   content: "";
   background-color: light-dark(#37352f, #d9d9d9);
   display: inline-block;
