@@ -7,8 +7,14 @@ function start() {
 }
 
 function print({ quote, author }) {
-  if (quote) document.querySelector("#quote").innerText = quote;
+  if (quote) document.querySelector("#quote").innerText = handleQuote(quote);
   if (author) document.querySelector("#author").innerText = author;
+}
+
+function handleQuote(quote) {
+  let str = quote.trim();
+  if (![".", "?", "!", '"'].includes(str.slice(-1))) str = `${str}.`;
+  return `${str.slice(0, 1).toLocaleUpperCase()}${str.slice(1)}`;
 }
 
 function greeting() {
