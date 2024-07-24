@@ -46,23 +46,25 @@ body.light #author::before {
   height: 310px;
   left: 50%;
   max-width: 960px;
-  opacity: 0;
   padding: 32px;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, calc(-50% + 20px));
-  transition: all 2s linear 0.2s;
-  width: 100%;
-}
-
-.container.show {
-  opacity: 1;
   transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .container blockquote {
   margin: 0;
+  opacity: 0;
   position: relative;
+  transform: translateY(20px);
+  transition: all 1s linear 0.2s;
+}
+
+.container.show blockquote {
+  margin: 0;
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 #quote {
